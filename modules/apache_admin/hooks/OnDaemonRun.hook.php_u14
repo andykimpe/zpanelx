@@ -93,9 +93,9 @@ function WriteVhostConfigFile()
     $line .= "" . fs_filehandler::NewLine();
 
     // ZPanel default virtual host container
-    $line .= "NameVirtualHost *:" . ctrl_options::GetSystemOption( 'apache_port' ) . "" . fs_filehandler::NewLine();
+    $line .= "#NameVirtualHost *:" . ctrl_options::GetSystemOption( 'apache_port' ) . "" . fs_filehandler::NewLine();
     foreach ( $customPortList as $port ) {
-        $line .= "NameVirtualHost *:" . $port . "" . fs_filehandler::NewLine();
+        $line .= "#NameVirtualHost *:" . $port . "" . fs_filehandler::NewLine();
     }
     $line .= "" . fs_filehandler::NewLine();
     $line .= "# Configuration for ZPanel control panel." . fs_filehandler::NewLine();
